@@ -1,0 +1,24 @@
+.OrderBox {
+    display: inline-block;
+    width: 30%;
+
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+    .OrderBox {
+        width: 30%;
+    }
+}
+
+@media (min-width: 700px) and (min-height: 401px) {
+    .OrderBox {
+        width: 50%;
+    }
+
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .OrderBox {
+        width: 50%;
+    }
+}
