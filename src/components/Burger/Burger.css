@@ -50,8 +50,9 @@
 }
 @media(min-width: 1400px) {
     .BurgerOrder {
-        width: 636px;
+        width: 35%;
         height: 545px;
+
     }
 
 }

@@ -10,6 +10,13 @@
     font-weight: bold;
 }
 
+.HideMe {
+    visibility: hidden;
+}
+.HideMeNot {
+    visibility: visible;
+}
+
 .Button:first-of-type {
     margin-left: 0;
     padding-left: 0;

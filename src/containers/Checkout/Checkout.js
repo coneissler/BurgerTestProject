@@ -5,6 +5,9 @@ import ContactData from './ContactData/ContactData'
 import {connect} from 'react-redux'
 
 class Checkout extends Component {
+    state = {
+        hide: 'HideMeNot'
+    };
 
     checkoutCancelledHandler = () => {
         this.props.history.goBack();
@@ -12,6 +15,9 @@ class Checkout extends Component {
 
     checkoutContinuedHandler = () => {
         this.props.history.replace('/checkout/contact-data');
+        this.setState({
+            hide: 'HideMe'
+        })
     };
 
 
@@ -19,9 +25,10 @@ class Checkout extends Component {
         return(
             <div>
                 <CheckoutSummary
-                    ingredients={this.props.ings}
+                    orderedIngs={this.props.orderedIngs}
                     checkoutCancelled={this.checkoutCancelledHandler}
                     checkoutContinued={this.checkoutContinuedHandler}
+                    visibility={this.state.hide}
                 />
                 <Route
                     path={this.props.match.path + '/contact-data'}
@@ -35,8 +42,10 @@ class Checkout extends Component {
 const mapStateToProps = state => {
     return {
         ings: state.ingredients,
+        orderedIngs: state.orderedIngs
     }
 };
+
 
 
 export default connect(mapStateToProps)(Checkout);

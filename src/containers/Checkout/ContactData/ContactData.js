@@ -32,7 +32,7 @@ class ContactData extends Component {
                 value: '',
                 validation: {
                     required: true,
-                    minLength: 5
+                    minLength: 3
                 },
                 valid: false,
                 touched: false
@@ -88,6 +88,7 @@ class ContactData extends Component {
         }
         const order = {
             ingredients: this.props.ings,
+            orderedIngs: this.props.orderedIngs,
             price: this.props.price,
             orderData: formData
         };
@@ -171,6 +172,7 @@ class ContactData extends Component {
 const mapStateToProps = state => {
     return {
         ings: state.ingredients,
+        orderedIngs: state.orderedIngs,
         price: state.totalPrice
     }
 };

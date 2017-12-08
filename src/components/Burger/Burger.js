@@ -4,14 +4,9 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = (props) => {
 
-    let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
-        return [...Array(props.ingredients[igKey])].map((_, i) => {
-            return <BurgerIngredient key={igKey + i} type={igKey} />
-        });
-    })
-        .reduce((arr, el) => {
-            return arr.concat(el)
-    }, []);
+    let transformedIngredients = props.orderedIngs.map((ing, i) => {
+        return <BurgerIngredient key={i} type={ing}/>
+    });
 
     if(transformedIngredients.length === 0) {
         transformedIngredients = <p>Please start adding ingredients</p>
@@ -30,3 +25,13 @@ const burger = (props) => {
 };
 
 export default burger;
+
+//
+// let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
+// return [...Array(props.ingredients[igKey])].map((_, i) => {
+//     return <BurgerIngredient key={igKey + i} type={igKey} />
+// });
+// })
+// .reduce((arr, el) => {
+//     return arr.concat(el)
+// }, []);

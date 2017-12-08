@@ -65,7 +65,7 @@ class BurgerBuilder extends Component {
         if (this.props.ings) {
             burger = (
                 <Aux>
-                    <Burger ingredients={this.props.ings}/>
+                    <Burger orderedIngs={this.props.orderedIngs}/>
                     <BuildControls
                         ingredientAdded={this.props.onIngredientAdded}
                         ingredientRemoved={this.props.onIngredientRemoved}
@@ -104,6 +104,7 @@ class BurgerBuilder extends Component {
 const mapStateToProps = state => {
     return {
         ings: state.ingredients,
+        orderedIngs: state.orderedIngs,
         price: state.totalPrice
     }
 };

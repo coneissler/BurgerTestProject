@@ -34,6 +34,7 @@ class Orders extends Component {
                     <Order
                         key={order.id}
                         ingredients={order.ingredients}
+                        orderedIngs={order.orderedIngs}
                         price={order.price}
                         color={order.orderData.color}
                         burgerName={order.orderData.burgerName}

@@ -9,7 +9,7 @@ const order = (props) => {
 
     return(
        <div className={classes.Order} style={{backgroundColor: backColor}} >
-           <Burger ingredients={props.ingredients} order/>
+           <Burger orderedIngs={props.orderedIngs} order/>
            <OrderBox
                ingredients={props.ingredients}
                price={props.price}
